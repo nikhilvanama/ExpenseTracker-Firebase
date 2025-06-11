@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Expense Form</h4>
+        <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="priceHelp"
+                    placeholder="Price" formControlName="price">
+                <div id="priceHelp" class="form-text">We'll never share your Price with anyone else.</div>
+                <div *ngIf="expenseForm.get('price')?.touched && expenseForm.get('price')?.invalid">
+                    <small class="text-danger" *ngIf="expenseForm.get('price')?.errors?.['required']">Price is
+                        required.</small>
+                    <small class="text-danger" *ngIf="expenseForm.get('price')?.errors?.['minlength']">Minimum 1
+                        character.</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Title"
+                    formControlName="title">
+                <div *ngIf="expenseForm.get('title')?.touched && expenseForm.get('title')?.invalid">
+                    <small class="text-danger" *ngIf="expenseForm.get('title')?.errors?.['required']">Title
+                        is required.</small>
+                    <small class="text-danger" *ngIf="expenseForm.get('title')?.errors?.['minlength']">Minimum
+                        5 characters.</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-control" rows="3"
+                    formControlName="description"></textarea>
+                <div *ngIf="expenseForm.get('description')?.touched && expenseForm.get('description')?.invalid">
+                    <small class="text-danger" *ngIf="expenseForm.get('description')?.errors?.['required']">Description
+                        is required.</small>
+                    <small class="text-danger" *ngIf="expenseForm.get('description')?.errors?.['minlength']">Minimum
+                        10 characters.</small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
