@@ -43,6 +43,7 @@ Thumbs.db
 
 # 
 /constants
+constants.ts
 
 # 
 /environments
