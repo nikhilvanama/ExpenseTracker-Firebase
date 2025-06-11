@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 # 
-constants.ts
+/constants
 
 # 
 /environments
