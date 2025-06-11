@@ -1,59 +1,101 @@
-# FirebaseCrud
+# 💰 Expense Tracker (Angular + Firebase)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+A simple **Expense Tracker App** built using **Angular** that allows users to:
 
-## Development server
+- Add expenses with `Title`, `Price`, and `Description`.
+- Store data in **Firebase Realtime Database**.
+- Display expense items as cards.
+- Delete specific expense entries.
 
-To start a local development server, run:
+This project is ideal for beginners learning Angular, Firebase integration, and CRUD operations.
+
+---
+
+## 🔥 Features
+
+- ✅ Add new expense
+- ✅ View list of expenses
+- ✅ Delete specific expense
+- 🔄 Real-time updates using Firebase Realtime Database
+
+---
+
+## 🛠️ Built With
+
+- [Angular](https://angular.io/)
+- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
+
+---
+
+## 📦 Folder Structure (Simplified)
+
+src/
+├── app/
+│ ├── components/ # Expense Card & Form components
+│ ├── services/ # Firebase service for DB operations
+│ ├── models/ # Expense model (interface)
+│ └── app.module.ts
+├── environments/ # Firebase config
+
+yaml
+Copy
+Edit
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/your-username/expense-tracker-angular.git
+cd expense-tracker-angular
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Setup Firebase
+Go to Firebase Console
+
+Create a project
+
+Add Realtime Database and get config values
+
+Replace the Firebase config in:
+
+ts
+Copy
+Edit
+// src/environments/environment.ts
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_DOMAIN",
+    databaseURL: "YOUR_DB_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_BUCKET",
+    messagingSenderId: "YOUR_MSG_ID",
+    appId: "YOUR_APP_ID"
+  }
+};
+4. Run the App
+bash
+Copy
+Edit
 ng serve
-```
+Navigate to: http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🧹 Firebase Database Rules (Optional)
+json
+Copy
+Edit
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+⚠️ For development only. Use proper auth rules for production.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
