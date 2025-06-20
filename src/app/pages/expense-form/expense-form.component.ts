@@ -27,20 +27,6 @@ export class ExpenseFormComponent implements OnInit {
   expenseForm!: FormGroup;
   expenseId = '';
 
-  // expenseForm = new FormGroup({
-  //   price: new FormControl<string>('', [Validators.required, Validators.minLength(1)]),
-  //   title: new FormControl<string>('', [Validators.required, Validators.minLength(5)]),
-  //   description: new FormControl<string>('', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]),
-  // });
-
-  // ngOnInit(): void {
-  // this.expenseForm = this.fb.group({
-  //   price: new FormControl<string>('', [Validators.required, Validators.minLength(1)]),
-  //   title: new FormControl<string>('', [Validators.required, Validators.minLength(5)]),
-  //   description: new FormControl<string>('', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]),
-  // });
-  // }
-
   get price() {
     return this.expenseForm.get('price');
   }
