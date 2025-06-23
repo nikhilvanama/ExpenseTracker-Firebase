@@ -12,10 +12,10 @@ This project is ideal for beginners learning Angular, Firebase integration, and 
 
 ## 🔥 Features
 
-- ✅ Add new expense
-- ✅ View list of expenses
-- ✅ Delete specific expense
-- 🔄 Real-time updates using Firebase Realtime Database
+- ✅ Add new expense.
+- ✅ View list of expenses.
+- ✅ Delete specific expense.
+- 🔄 Real-time updates using Firebase Realtime Database.
 
 
 ## 🛠️ Built With
