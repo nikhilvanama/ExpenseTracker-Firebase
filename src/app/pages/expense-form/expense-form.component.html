@@ -1,61 +1,74 @@
+<!-- Main Container for the Expense Form -->
 <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8">
+        <!-- Glassmorphic Form Card -->
         <div class="glass-card p-5">
+            <!-- Form Header: Title changes dynamically or remains 'Add Expense' -->
             <div class="mb-4">
                 <h2 class="fw-bold mb-1">Add Expense</h2>
                 <p class="text-secondary small">Fill in the details to record your spending</p>
             </div>
 
+            <!-- Angular Reactive Form: Binds to 'expenseForm' in TypeScript -->
             <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+                
+                <!-- Title Field -->
                 <div class="mb-4">
                     <label for="title" class="form-label">Title</label>
                     <div class="input-group">
+                        <!-- Left-side Icon for Title -->
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary">
                             <i data-lucide="type"></i>
                         </span>
+                        <!-- Input for expense title with standard Angular formControlName -->
                         <input type="text" class="form-control border-start-0" name="title" id="title" placeholder="What did you buy?"
                             formControlName="title">
                     </div>
+                    <!-- Validation Messages for Title -->
                     <div *ngIf="expenseForm.get('title')?.touched && expenseForm.get('title')?.invalid" class="mt-2">
-                        <small class="text-danger d-block" *ngIf="expenseForm.get('title')?.errors?.['required']">Title
-                            is required.</small>
-                        <small class="text-danger d-block" *ngIf="expenseForm.get('title')?.errors?.['minlength']">Minimum
-                            5 characters.</small>
+                        <small class="text-danger d-block" *ngIf="expenseForm.get('title')?.errors?.['required']">Title is required.</small>
+                        <small class="text-danger d-block" *ngIf="expenseForm.get('title')?.errors?.['minlength']">Minimum 5 characters.</small>
                     </div>
                 </div>
 
+                <!-- Price Field -->
                 <div class="mb-4">
                     <label for="price" class="form-label">Price</label>
                     <div class="input-group">
+                        <!-- Left-side Icon (Indian Rupee) -->
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary">
                             <i data-lucide="indian-rupee"></i>
                         </span>
+                        <!-- Input for amount with numeric placeholder -->
                         <input type="text" class="form-control border-start-0" name="price" id="price" 
                             placeholder="0.00" formControlName="price">
                     </div>
+                    <!-- Validation Messages for Price -->
                     <div *ngIf="expenseForm.get('price')?.touched && expenseForm.get('price')?.invalid" class="mt-2">
-                        <small class="text-danger d-block" *ngIf="expenseForm.get('price')?.errors?.['required']">Price is
-                            required.</small>
+                        <small class="text-danger d-block" *ngIf="expenseForm.get('price')?.errors?.['required']">Price is required.</small>
                     </div>
                 </div>
 
+                <!-- Description Field -->
                 <div class="mb-4">
                     <label for="description" class="form-label">Description</label>
                     <div class="input-group">
+                        <!-- Left-side Icon for Notes -->
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary align-items-start pt-3">
                             <i data-lucide="align-left"></i>
                         </span>
+                        <!-- Textarea for detailed description -->
                         <textarea name="description" id="description" class="form-control border-start-0" rows="3"
                             placeholder="Add some notes..." formControlName="description"></textarea>
                     </div>
+                    <!-- Validation Messages for Description -->
                     <div *ngIf="expenseForm.get('description')?.touched && expenseForm.get('description')?.invalid" class="mt-2">
-                        <small class="text-danger d-block" *ngIf="expenseForm.get('description')?.errors?.['required']">Description
-                            is required.</small>
-                        <small class="text-danger d-block" *ngIf="expenseForm.get('description')?.errors?.['minlength']">Minimum
-                            10 characters.</small>
+                        <small class="text-danger d-block" *ngIf="expenseForm.get('description')?.errors?.['required']">Description is required.</small>
+                        <small class="text-danger d-block" *ngIf="expenseForm.get('description')?.errors?.['minlength']">Minimum 10 characters.</small>
                     </div>
                 </div>
 
+                <!-- Submit Button: Triggers onSubmit() in the component -->
                 <button type="submit" class="btn btn-primary w-100 py-3 mt-2 d-flex align-items-center justify-content-center gap-2">
                     <i data-lucide="send"></i> Save Expense
                 </button>

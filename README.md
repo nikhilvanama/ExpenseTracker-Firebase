@@ -39,6 +39,29 @@ src/
 └── styles.css            # Global Glassmorphic Design System
 ```
 
+## 🧠 How it Works
+
+This application follows a clean, modular architecture:
+
+### 1. Data Flow (The 'Engine')
+- **`ExpenseService`**: Acts as a central hub for all database interactions. It uses `AngularFireList` to create a live connection to the `/expenses` path in Firebase.
+- **Real-time Synchronization**: Instead of traditional API calls, the app uses `snapshotChanges()`. This means any change to the database (even from another browser tab) is instantly reflected in the UI.
+
+### 2. Component Logic
+- **`ExpenseComponent`**:
+    - **Fetching**: On load, it subscribes to the service and maps the raw database "payload" into a usable TypeScript object list.
+    - **Reverse Chronological Order**: It uses `array.unshift()` during data processing so the newest entries are always shown first.
+    - **Custom State Management**: Manages its own modal system (`showDeleteModal`) to ensure the deletion flow feels smooth and integrated.
+- **`ExpenseFormComponent`**:
+    - **Reactive Core**: Built with `FormBuilder` to provide real-time validation (e.g., minimum character lengths).
+    - **Hybrid Mode**: Detects URL parameters to switch between "Add New" and "Edit Existing" modes seamlessly.
+
+### 3. Modern Design System
+- **CSS Variables**: Centralized tokens for glassmorphism effects (backdrop-filters, border-opacity) ensure consistency.
+- **Micro-interactions**: Subtle hover lifts and transitions are applied via `styles.css` to provide a premium user experience.
+
+---
+
 ## 🚀 Getting Started
 
 ### 1. Clone & Install
