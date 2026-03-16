@@ -1,98 +1,76 @@
-# 💰 Expense Tracker (Angular + Firebase)
+# 💰 Modern Expense Tracker (Angular + Firebase)
 
-A simple **Expense Tracker App** built using **Angular** that allows users to:
+A premium, **Modern Expense Tracker** application built with **Angular** and **Firebase**. This app features a high-end **Glassmorphism** design, real-time data persistence, and a sleek dark-themed interface.
 
-- Add expenses with `Title`, `Price`, and `Description`.
-- Store data in **Firebase Realtime Database**.
-- Display expense items as cards.
-- Delete specific expense entries.
+![Modern Dashboard](file:///C:/Users/vanam/.gemini/antigravity/brain/f7086054-8cf5-4dbe-9020-77e0197c2e70/dashboard_verification_1773638917341.png)
 
-This project is ideal for beginners learning Angular, Firebase integration, and CRUD operations.
+## ✨ Modernized Features
 
-
-## 🔥 Features
-
-- ✅ Add new expense.
-- ✅ View list of expenses.
-- ✅ Delete specific expense.
-- 🔄 Real-time updates using Firebase Realtime Database.
-
+- 🎭 **Glassmorphism UI**: Stunning transparent layouts with backdrop filters and subtle glow effects.
+- 🎨 **Dark Theme Aesthetic**: Deep navy and indigo palette optimized for a premium feel.
+- 🇮🇳 **Currency Localization**: Native support for Indian Rupee (₹).
+- 🔄 **Latest-First Sorting**: Automated sorting to show recent expenses at the top.
+- 🗑️ **Custom Confirmation Modal**: Replaced native alerts with a sleek, themed delete confirmation popup.
+- ⚡ **Real-time Synchronization**: Powered by Firebase Realtime Database for instant updates.
+- 🖋️ **Premium Typography**: Uses the modern "Outfit" typeface for superior readability.
+- 🧩 **Lucide Icons**: Integrated high-quality vector icons for a polished look.
 
 ## 🛠️ Built With
 
-- [Angular](https://angular.io/)
-- [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
+- **Framework**: [Angular 20](https://angular.io/)
+- **Database**: [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
+- **Icons**: [Lucide Icons](https://lucide.dev/)
+- **Styles**: Vanilla CSS with custom properties + Bootstrap Grid
 
+## 📦 Folder Structure
 
-## 📦 Folder Structure (Simplified)
 ```bash
 src/
 ├── app/
-│ ├── assets/ # Application Assets
-│ ├── core/
-│ ├── ├── constants/ # FirebaseConfig File
-│ ├── ├── models/ # Define Interface
-│ ├── ├── services/ # Global Services for CRUD Functions
-│ ├── pages/ # Expense Card & Form components
-│ └── app.config.ts
-
+│   ├── core/
+│   │   ├── constants/ # Firebase Configuration
+│   │   ├── models/    # Data Interfaces
+│   │   └── services/  # Firebase CRUD Logic
+│   ├── pages/
+│   │   ├── expense/      # Dashboard Component
+│   │   └── expense-form/ # Add/Edit Form Component
+│   ├── app.component.ts  # Route Logic & Icon Loader
+│   └── app.config.ts     # Global Config & Firebase Init
+└── styles.css            # Global Glassmorphic Design System
 ```
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
-
+### 1. Clone & Install
 ```bash
-git clone (https://github.com/nikhilvanama/ExpenseTracker-Firebase.git)
+git clone https://github.com/nikhilvanama/ExpenseTracker-Firebase.git
 cd ExpenseTracker-Firebase
-```
-
-### 2. Install Dependencies
-```bash
 npm install
 ```
 
-### 3. Setup Firebase
-Go to Firebase Console
+### 2. Firebase Setup
+1. Create a project in [Firebase Console](https://console.firebase.google.com/).
+2. Enable **Realtime Database**.
+3. Copy your config to `src/app/core/constants/constants.ts`:
 
-Create a project
-
-Add Realtime Database and get config values
-
-Replace the Firebase config in:
-
-```bash
-ts
-// src/app/core/constants/constants.ts
+```typescript
 export const firebaseConfig = {
-  production: false,
-  firebaseConfig: {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_DOMAIN",
-    databaseURL: "YOUR_DB_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_BUCKET",
-    messagingSenderId: "YOUR_MSG_ID",
-    appId: "YOUR_APP_ID"
-  }
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_DOMAIN",
+  databaseURL: "YOUR_DB_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_MSG_ID",
+  appId: "YOUR_APP_ID"
 };
 ```
 
-### 4. Run the App
+### 3. Run Development Server
 ```bash
 ng serve
-Navigate to: http://localhost:4200
 ```
+Navigate to `http://localhost:4200`
 
-🧹 Firebase Database Rules (Optional)
-```bash
-json
-{
-  "rules": {
-    ".read": true,
-    ".write": true
-  }
-}
-```
-⚠️ For development only. Use proper auth rules for production.
+---
+*Developed with focus on Modern Web Design Trends.*
 
