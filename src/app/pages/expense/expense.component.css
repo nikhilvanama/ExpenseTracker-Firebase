@@ -136,12 +136,67 @@
 }
 
 .btn-danger {
-  background-color: #dc3545;
+  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+  border: none;
   color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform 0.2s;
 }
 
 .btn-danger:hover {
-  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    border-radius: 12px;
+    background: transparent;
+    font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content-custom {
+    max-width: 450px;
+    width: 90%;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-icon i {
+    width: 48px;
+    height: 48px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .btn-primary {

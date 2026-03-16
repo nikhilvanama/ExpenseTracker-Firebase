@@ -16,6 +16,8 @@ export class ExpenseComponent {
   expenses: IExpense[] = [];
   totalExpenses = 0;
   isLoading: boolean = false; // Initialize loading state
+  showDeleteModal: boolean = false;
+  selectedExpenseKey: string = '';
 
   constructor(private expenseSer: ExpenseService, private router: Router) { }
 
@@ -67,10 +69,30 @@ export class ExpenseComponent {
   }
 
   deleteExpense(key: string) {
-      if (confirm('Are you sure you want to delete this expense?')) {
-          this.expenseSer.deleteExpense(key)
-              .then(() => console.log('Expense deleted successfully!'))
-              .catch(err => console.error('Error deleting expense:', err));
-      }
+      this.openDeleteModal(key);
+  }
+
+  openDeleteModal(key: string) {
+    this.selectedExpenseKey = key;
+    this.showDeleteModal = true;
+  }
+
+  closeModal() {
+    this.showDeleteModal = false;
+    this.selectedExpenseKey = '';
+  }
+
+  confirmDelete() {
+    if (this.selectedExpenseKey) {
+      this.expenseSer.deleteExpense(this.selectedExpenseKey)
+        .then(() => {
+          console.log('Expense deleted successfully!');
+          this.closeModal();
+        })
+        .catch(err => {
+          console.error('Error deleting expense:', err);
+          this.closeModal();
+        });
+    }
   }
 }
