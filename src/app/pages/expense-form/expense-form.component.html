@@ -13,7 +13,7 @@
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary">
                             <i data-lucide="type"></i>
                         </span>
-                        <input type="text" class="form-control border-start-0 ps-0" name="title" id="title" placeholder="What did you buy?"
+                        <input type="text" class="form-control border-start-0" name="title" id="title" placeholder="What did you buy?"
                             formControlName="title">
                     </div>
                     <div *ngIf="expenseForm.get('title')?.touched && expenseForm.get('title')?.invalid" class="mt-2">
@@ -30,7 +30,7 @@
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary">
                             <i data-lucide="dollar-sign"></i>
                         </span>
-                        <input type="text" class="form-control border-start-0 ps-0" name="price" id="price" 
+                        <input type="text" class="form-control border-start-0" name="price" id="price" 
                             placeholder="0.00" formControlName="price">
                     </div>
                     <div *ngIf="expenseForm.get('price')?.touched && expenseForm.get('price')?.invalid" class="mt-2">
@@ -45,7 +45,7 @@
                         <span class="input-group-text bg-transparent border-end-0 border-secondary border-opacity-25 text-secondary align-items-start pt-3">
                             <i data-lucide="align-left"></i>
                         </span>
-                        <textarea name="description" id="description" class="form-control border-start-0 ps-0" rows="3"
+                        <textarea name="description" id="description" class="form-control border-start-0" rows="3"
                             placeholder="Add some notes..." formControlName="description"></textarea>
                     </div>
                     <div *ngIf="expenseForm.get('description')?.touched && expenseForm.get('description')?.invalid" class="mt-2">

@@ -40,7 +40,7 @@ export class ExpenseComponent {
             this.totalExpenses += priceValue;
           }
 
-          this.expenses.push({
+          this.expenses.unshift({
             key: item.key || '',
             title: expense.title,
             description: expense.description,
