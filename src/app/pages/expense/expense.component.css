@@ -87,6 +87,54 @@
   background-color: #218838;
 }
 
+.expense-card {
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.expense-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.price-tag {
+    font-size: 1.25rem;
+    color: var(--accent-secondary);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+::ng-deep lucide-icon {
+    width: 18px;
+    height: 18px;
+}
+
 .btn-danger {
   background-color: #dc3545;
   color: white;

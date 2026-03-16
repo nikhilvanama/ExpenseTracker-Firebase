@@ -1,0 +1,21 @@
+.input-group-text {
+    border-radius: 12px 0 0 12px;
+}
+
+.form-control {
+    border-radius: 0 12px 12px 0;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary) !important;
+}
+
+.input-group:focus-within .form-control {
+    border-color: var(--accent-primary);
+}
+
+::ng-deep lucide-icon {
+    width: 20px;
+    height: 20px;
+}
